@@ -1,7 +1,5 @@
-#include "kncecomm.h"
-
-#include <string>
-#include <windows.h>
+#include "kncecomm.hpp"
+#include "7swinutil/tstring.h"
 
 #ifdef UNICODE
 namespace std { typedef wstring tstring; }
@@ -222,7 +220,7 @@ static void updateFont(HWND hDlg) {
     TCHAR *sizeBuf = new TCHAR[SendMessage(hFontSizeList, LB_GETTEXTLEN,
         fontSizeIndex, 0) + 1];
     SendMessage(hFontSizeList, LB_GETTEXT, fontSizeIndex, (LPARAM)sizeBuf);
-    int pointSize = _ttoi(sizeBuf) * 10;
+    int pointSize = ttoi(sizeBuf) * 10;
 
     HWND hFontStyleList = GetDlgItem(hDlg, IDC_CHOOSE_FONT_STYLE_LIST);
     int fontStyleIndex = SendMessage(hFontStyleList, LB_GETCURSEL, 0, 0);

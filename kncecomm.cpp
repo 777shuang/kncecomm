@@ -1,7 +1,8 @@
-#include "kncecomm.h"
+#include "kncecomm.hpp"
 
 #include <algorithm>
 #include <map>
+#include <cmath>
 
 using namespace std;
 
@@ -518,8 +519,7 @@ KNCECOMM_API int knceObtainFontNames(KnceFontName **fontNames, int pitchType) {
 }
 
 KNCECOMM_API int knceFontExists(const TCHAR *name) {
-    return EnumFonts(GetDC(NULL), NULL, checkFontProc,
-        (LPARAM)&tstring(name)) == 0;
+    return EnumFonts(GetDC(NULL), NULL, checkFontProc, (LPARAM)tstring(name).c_str()) == 0;
 }
 
 KNCECOMM_API void knceGetFontAttributes(HFONT hFont, TCHAR *faceName,

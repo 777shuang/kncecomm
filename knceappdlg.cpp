@@ -1,8 +1,6 @@
-#include "kncecomm.h"
+#include "kncecomm.hpp"
 
-#include <string>
 #include <algorithm>
-#include <windows.h>
 
 #ifdef UNICODE
 namespace std { typedef wstring tstring; }
@@ -207,7 +205,7 @@ static void updateApplicationList(HWND hDlg) {
 
     vector<pair<tstring, tstring> > captToPath;
 
-    tstring dir = _T("\\NAND3\\ƒAƒvƒŠ");
+    tstring dir = _T("\\NAND3\\ï¿½Aï¿½vï¿½ï¿½");
     tstring findPath = dir + _T("\\*.*");
 
     WIN32_FIND_DATA fd;
@@ -225,7 +223,7 @@ static void updateApplicationList(HWND hDlg) {
 
     FindClose(hFind);
 
-    dir = _T("\\Storage Card\\ƒAƒvƒŠ");
+    dir = _T("\\Storage Card\\ï¿½Aï¿½vï¿½ï¿½");
     findPath = dir + _T("\\*.*");
 
     hFind = FindFirstFile(findPath.c_str(), &fd);

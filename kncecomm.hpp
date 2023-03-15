@@ -4,6 +4,8 @@
 #include <vector>
 #include <string>
 #include <windows.h>
+#include <tchar.h>
+#include "7swinutil/tstring.h"
 
 #ifdef UNICODE
 namespace std { typedef wstring tstring; }

@@ -1,7 +1,4 @@
-#include "kncecomm.h"
-
-#include <string>
-#include <windows.h>
+#include "kncecomm.hpp"
 
 #ifdef UNICODE
 namespace std { typedef wstring tstring; }
